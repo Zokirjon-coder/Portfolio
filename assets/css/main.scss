@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --first-dbg-color: #333;
+    --first-dtext-color: #928888;
+    --first-lbg-color: #ddd;
+    --firt-ltext-color: #333;
+    --black: black;
+}
+
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background: #eee;
+    border: 1px solid rgb(233, 226, 226);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 10px;
+}
+
+::selection{
+    color: #ccc;
+    background-color: darkcyan;
+}
+
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+.animS{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 101;
+}
+
+.animS1{
+    background-color: chocolate;
+}
+
+.animS2{
+    background-color: black;
+    z-index: 102;
+}
+
+.animS2 h1#antext{
+    color: white;
+    font-size: clamp(20px, 7vw, 50px);
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title_section{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.jcsa{
+    justify-content: space-around;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.flex{
+    display: flex;
+}
+
+.jcc{
+    justify-content: center;
+}
+
+.jcsb{
+    justify-content: space-between;
+}
+
+.aic{
+    align-items: center;
+}
+
+.wrapper{
+    overflow-x: hidden;
+}
+
+.container{
+    padding: 0 80px;
+}
+
+.navigation li a{
+    padding: 5px 15px;
+    margin-left: 5px;
+    color: var(--firt-ltext-color);
+    font-weight: 500;
+    text-transform: capitalize;
+    display: inline-block;
+    position: relative;
+    transition: all .2s;
+}
+
+.navigation li{
+    position: relative;
+}
+
+.navigation li::before{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    display: block;
+    bottom: 0px;
+    left: 15px;
+    background-color: var(--firt-ltext-color);
+    transition:  all .2s;
+    border-radius: 2px;
+}
+
+.navigation li:hover::before{
+    width: 25px;
+}
+
+.navigation li a:hover{
+    transform: translateY(-2px);
+    color: var(--first-dtext-color);
+}
+
+header{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    user-select: none;
+}
+
+header .logo img{
+    width: 40px;
+}
+
+header .menu .toggler_btn{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: .5s;
+}
+
+// home section
+
+#home{
+    width: 100%;
+    height: 100vh;
+}
+
+#home .content{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#home .content .right_side{
+    width: 350px;
+}
+
+#home .content .right_side .img{
+    height: 500px;
+}
+
+#home .content .left_side .caret{
+    font-size: 20px;
+    animation: 1s caret linear infinite;
+    color: blue;
+}
+
+#home .content .left_side{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#home .content .left_side .heading1{
+    overflow: hidden;
+}
+#home .content .left_side .heading1 h1{
+    transform-origin: left;
+}
+
+@keyframes caret {
+    0%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    81%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#home .content .left_side .text_animate_lending{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+// About section
+
+#about{
+    width: 100%;
+    min-height: 100vh;
+}
+
+#about .content{
+    height: 100%;
+    padding: 50px 0;
+}
+
+#about .left_side, #about .right_side{
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+#about .right_side{
+    margin-left: 10px;
+    text-align: right;
+    flex-basis: 35%;
+    flex-shrink: 0;
+    max-width: 300px;
+}
+
+#about img{
+    width: 100%;
+    filter: grayscale(.9);
+}
+
+#about img:hover{
+    filter: grayscale(0);
+}
+
+#about .left_side h2{
+    margin-bottom: 15px;
+    color: var(--firt-ltext-color);
+    font-size: 28px;
+}
+
+#about .left_side p{
+    color: var(--firt-ltext-color);
+    line-height: 2;
+    text-align: justify;
+    font-size: 18px;
+}
+
+// skils section
+
+.skill_img{
+    width: 50px;
+}
+
+.skill_img img{
+    width: 100%;
+}
+
+#skills .content{
+    min-height: 100vh;
+}
+
+.skill_card{
+    width: 90%;
+    min-width: 200px;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-top: 5px;
+    padding: 5px;
+    transition: all ease .2s;
+}
+
+.skill_card:hover{
+    transform: scale(1.01);
+}
+
+.skill_name h1{
+    font-size: clamp(18px, 2vw, 50px);
+    text-align: center;
+}
+
+.skill_degree{
+    flex-grow: 1;
+    .skill_persent{
+        flex-basis: 50px;
+    }
+    .skill_range{
+        flex-grow: 1;
+        height: 15px;
+        background: #ccc;
+        border-radius: 15px;
+        margin: 0 15px;
+        position: relative;
+        overflow: hidden;
+        .range{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 15px;
+        }
+    }
+}
+
+.html_sec .range{
+    background: chocolate;
+    width: 90%;
+}
+
+.css_sec .range{
+    background: #2656E8;
+    width: 85%;
+}
+
+.sass_sec .range{
+    background: #CA669B;
+    width: 75%;
+}
+
+.js_sec .range{
+    background: #F0BD27;
+    width: 65%;
+}
+
+.skill_persent{
+    font-size: 15px;
+    font-weight: 500;
+    .persent{
+        font-size: clamp(18px, 2vw, 28px);
+    }
+}
+
+// works
+
+#works{
+    min-height: 100vh;
+}
+
+#works .content{
+    min-height: 100vh;
+}
+
+// conatact
+
+#contact{
+    min-height: 100vh;
+}
+
+.work_card{
+    width: 50%;
+    height: 200px;
+    background-color: #eee;
+    padding: 10px;
+    overflow: hidden;
+    height: 25vw;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.work_img{
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    a{
+        display: block;
+        height: 100%;
+        width: 100%;
+        &:hover{
+            background-size: 150%;
+            transition: 1s;
+        }
+    }
+}
+
+.work_telegram a{
+    background: url('../images/work_telegram.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.work_instagram a{
+    background: url("../images/work_instagram.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.work_floaticon a{
+    background: url("../images/work_floaticon.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.work_name h1{
+    font-size: clamp(18px, 2vw, 50px);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+//conatct section
+
+#contact{
+    min-height: 100vh;
+}
+
+#contact .content{
+    min-height: 100vh;
+    .left_side{
+        margin-right: 20px;
+        width: 600px;
+        .location {
+            width: 600px;
+            height: 450px;
+            max-height: 450px;
+            margin: auto;
+        }
+    }
+}
+
+#contact .right_side a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+#contact .right_side a .icon{
+    margin-right: 15px;
+}
+
+.icon img{
+    width: 20px
+}
+
+// media 630px
+
+@media screen and (max-width: 1090px) {
+    
+#contact .content .left_side{
+        margin-right: 0;
+        margin-bottom: 20px;
+        flex-shrink: 1;
+    }
+
+
+}
+
+@media screen and (max-width: 630px) {
+    h1{
+        font-size: 20px;
+    }
+
+    #skills .title_section {
+        margin-bottom: -65px;
+    }
+
+    #about .heading p{
+        font-size: 15px;
+    }
+
+
+    .container{
+        padding: 0 30px;
+    }
+
+    .work_card{
+        height: 40vw;
+    }
+
+    #contact .content .left_side{
+        max-width: 500px;
+        & > .location{
+            width: 500px;
+            height: 400px;
+        }
+    }
+
+}
+
+// media 530px
+
+@media screen and (max-width: 530px) {
+    .container{
+        padding: 0 5px;
+    }
+
+    header  .logo{
+        width: 100%;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .menu{
+        position: fixed;
+        top: -50px;
+        left: 0;
+        right: 0;
+        transition: .5s;
+    }
+
+    .menu.forward{
+        top: 35px;
+    }
+
+    header .menu .toggler_btn{
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background-color: var(--first-lbg-color);
+        cursor: pointer;
+        border-radius: 50%;
+        &:hover{
+            background-color: var(--firt-ltext-color);
+        }
+        &:hover svg{
+            opacity: 1;
+            animation-play-state: paused;
+        }
+        svg{
+            width: 10px;
+            
+                animation: toggleAnim 1s linear infinite;
+                position: absolute;
+            
+            @keyframes toggleAnim{
+                0%{
+                    opacity: .2;
+                    top: 0px;
+                }
+                40%{
+                    opacity: .3;
+                    top: 15px;
+                }
+                41%{
+                    opacity: .9;
+                    top: 15px;
+                }
+                100%{
+                    opacity: 1;
+                    top: 0px;
+                }
+            }
+        }
+    }
+
+    header .menu .toggler_btn.backward {
+        top: 35px;
+    }
+
+    .toggler_btn.backward svg{
+        transform: rotate(180deg);
+    }
+
+    .work_card{
+        width: 90%;
+    }
+    #contact .content .left_side{
+        & > .location{
+            width: 400px;
+            height: 300px;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .container{
+        padding: 0 3px;
+    }
+
+    .menu .navigation li a{
+        padding: 5px;
+        margin-left: 2px;
+        font-size: 12px;
+    }
+
+    .work_card{
+        width: 90%;
+    }
+    #contact .content .left_side{
+        & > .location{
+            width: 300px;
+            height: 200px;
+        }
+    }
+}
